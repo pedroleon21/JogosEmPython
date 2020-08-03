@@ -1,7 +1,13 @@
 import random
-import correcao_escrita
+from unicodedata import normalize
+
+def string_normalizada(palavra):
+    return normalize('NFKD', palavra).encode('ASCII','ignore').decode('ASCII')
+
+
 def palavra_sortida_normaizada_upper(palavras):
     palavra = palavras[random.randrange(0,len(palavras))]
+    palavra = string_normalizada(palavra)
     return palavra.upper()
 
 
