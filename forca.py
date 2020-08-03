@@ -1,4 +1,10 @@
 import random
+import correcao_escrita
+def palavra_sortida_normaizada_upper(palavras):
+    palavra = palavras[random.randrange(0,len(palavras))]
+    return palavra.upper()
+
+
 def imprime_letras_e_undeline(letras,palavra):
     nova_palavra= str()
     contem_letra = False
@@ -139,9 +145,8 @@ def letra_in_list(cmp_letra,palavra):
 def jogar():
     print('iniciando....')
     palavras = abertura_de_arquivo();
-    palavra = palavras[random.randrange(0,len(palavras))]
+    palavra = palavra_sortida_normaizada_upper(palavras)
     print('tudo pronto!')
-    palavra = palavra.upper()
     acertou =  True
     enforcou = 7
     letras = list()
